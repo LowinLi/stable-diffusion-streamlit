@@ -1,0 +1,21 @@
+FROM python:3.8.7-slim as builder
+ARG HUGGINGFACE_TOKEN
+ENV HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
+COPY docker/requirements.txt /app/
+
+# install
+RUN echo "==> Installing ..."  && \
+    pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install virtualenv && \
+    virtualenv -p /usr/local/bin/python /app/env && \
+    /app/env/bin/pip install --no-cache-dir --upgrade pip && \
+    /app/env/bin/pip install --no-cache-dir -r /app/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+
+COPY src/stable-diffusion-streamlit /app/
+RUN cd /app/pages/model/ && \
+    /app/env/bin/python prepare.py
+
+FROM python:3.8.7-slim
+COPY --from=builder /app /app
+WORKDIR /app
+CMD ["/app/env/bin/streamlit", "run", "主页.py"]

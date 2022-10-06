@@ -1,0 +1,16 @@
+name: Build Image
+
+on: push
+
+jobs:
+  build: 
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to Registry
+        if: startsWith(github.ref, 'refs/tags')
+        run: docker login --username=${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push Image
+        if: startsWith(github.ref, 'refs/tags')
+        run: |
+          cd docker && bash build.sh ${{ secrets.HUGGINGFACE_TOKEN }}
