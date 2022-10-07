@@ -5,6 +5,7 @@ import threading
 from datetime import datetime
 import json
 import os
+import gc
 from diffusers.training_utils import set_seed
 
 from pages.model.inference import result_dir, quant_pipe
@@ -129,6 +130,8 @@ with st.form(key="my_form"):
         json_filename = os.path.join(result_dir, "text2image", uid, "config.json")
         os.makedirs(os.path.join(result_dir, "text2image", uid), exist_ok=True)
         t.get_result().images[0].save(image_filename)
+        del t
+        gc.collect()
         with open(json_filename, "w") as f:
             config = {
                 "text_prompt": text_prompt,
