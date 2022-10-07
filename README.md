@@ -1,4 +1,4 @@
-[**中文说明**](https://github.com/LowinLi/stable-diffusion-streamlit/README_CN.md) | [**English**](https://github.com/LowinLi/stable-diffusion-streamlit/README.md)
+[**中文说明**](https://github.com/LowinLi/stable-diffusion-streamlit/blob/main/README_CN.md) | [**English**](https://github.com/LowinLi/stable-diffusion-streamlit/blob/main/README.md)
 
 # stable-diffusion-streamlit
 
