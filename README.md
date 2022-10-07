@@ -1,3 +1,5 @@
+[**中文说明**](https://github.com/LowinLi/stable-diffusion-streamlit/README_CN.md) | [**English**](https://github.com/LowinLi/stable-diffusion-streamlit/README.md)
+
 # stable-diffusion-streamlit
 
 - [1.Introduction](#1-introduction)
