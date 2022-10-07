@@ -10,9 +10,7 @@ def copy_weights():
         )
     ):
         if "weights.pb" in file_list:
-            shutil.copyfile(
-                os.path.join(root, "weights.pb"), "./onnx/unet/weights.pb"
-            )
+            shutil.copyfile(os.path.join(root, "weights.pb"), "./onnx/unet/weights.pb")
 
 
 if __name__ == "__main__":

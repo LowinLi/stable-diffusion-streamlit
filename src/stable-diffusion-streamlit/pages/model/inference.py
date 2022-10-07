@@ -35,8 +35,6 @@ def inference(uid, **args):
 
 
 if __name__ == "__main__":
-    inference(
-        uid="test",
-        prompt="Michael Jordan kill the game in the final 7 by a crossover shot",
-        num_inference_steps=4,
-    )
+    from pympler.asizeof import asizeof
+
+    print(asizeof(quant_pipe))

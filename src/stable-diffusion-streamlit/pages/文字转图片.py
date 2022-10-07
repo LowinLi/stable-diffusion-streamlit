@@ -107,7 +107,7 @@ with st.form(key="my_form"):
             num_inference_steps,
             guidance_scale,
             negative_prompt,
-            eta
+            eta,
         )
         t = PipelineThread(func=quant_pipe, args=args)
         t.start()

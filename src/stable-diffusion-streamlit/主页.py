@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-app_title = os.environ.get("APP_TITLE", "李龙威的Streamlit，Stable Diffusion在线生图工具")
+app_title = os.environ.get("APP_TITLE", "Streamlit，Stable Diffusion在线生图工具")
 st.title(app_title)
 body = """+ [文字转图片](./文字转图片)
 + [画廊](./画廊)

@@ -12,9 +12,7 @@ list_uid = sorted(list_uid, reverse=True)
 
 for uid in list_uid:
     try:
-        with open(
-            os.path.join(result_dir, uid, "config.json"), "r"
-        ) as f:
+        with open(os.path.join(result_dir, uid, "config.json"), "r") as f:
             config = json.load(f)
 
         with st.container():

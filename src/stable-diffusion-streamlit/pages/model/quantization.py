@@ -23,5 +23,6 @@ def quant():
                 os.remove(os.path.join(root, "weights.pb"))
                 print("Removed weights.pb")
 
+
 if __name__ == "__main__":
     quant()

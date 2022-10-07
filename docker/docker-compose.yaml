@@ -2,7 +2,7 @@ version: "2.3"
 services:
   stable-diffusion-streamlit-onnxquantized:
     container_name: stable-diffusion-streamlit-onnxquantized
-    image: lowinli98/stable-diffusion-streamlit-onnxquantized:v0.1
+    image: lowinli98/stable-diffusion-streamlit-onnxquantized:v0.2
     expose:
       - 8501
     ports:
