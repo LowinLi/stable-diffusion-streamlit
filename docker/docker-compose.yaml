@@ -1,0 +1,15 @@
+version: "2.3"
+services:
+  stable-diffusion-streamlit-onnxquantized:
+    container_name: stable-diffusion-streamlit-onnxquantized
+    image: lowinli98/stable-diffusion-streamlit-onnxquantized:v0.1
+    expose:
+      - 8501
+    ports:
+      - "8501:8501"
+    environment:
+      - APP_TITLE=Stable Diffusion Streamlit
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ./volume:/app/pages/model/result

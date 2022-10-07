@@ -3,3 +3,4 @@ src/stable-diffusion-streamlit/pages/model/onnx
 __pycache__
 docker/.env
 tag.sh
+docker/volume

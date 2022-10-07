@@ -3,8 +3,14 @@ import os
 import json
 
 root = os.getcwd()
-
-if root[-3:] == "src":
+last_dir = os.path.split(root)[-1]
+if last_dir == "stable-diffusion-streamlit":
+    model_dir = os.path.join(root, "pages/model/onnx")
+    result_dir = os.path.join(root, "pages/model/result")
+elif last_dir == "pages":
+    model_dir = os.path.join(root, "model/onnx")
+    result_dir = os.path.join(root, "model/result")
+elif last_dir == "app":
     model_dir = os.path.join(root, "pages/model/onnx")
     result_dir = os.path.join(root, "pages/model/result")
 else:

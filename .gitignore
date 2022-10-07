@@ -3,3 +3,4 @@ onnx
 __pycache__
 docker/.env
 tag.sh
+docker/volume

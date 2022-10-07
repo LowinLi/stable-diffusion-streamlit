@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
 import time
 import threading
@@ -25,15 +24,6 @@ with st.form(key="my_form"):
     ce, c1, ce, c2, c3 = st.columns([0.07, 1, 0.07, 5, 0.07])
     with c1:
         st.subheader("参数配置", anchor=None)
-        guidance_scale = st.slider(
-            "指导参数(guidance_scale)",
-            min_value=0.0,
-            max_value=30.0,
-            value=7.0,
-            step=0.1,
-            help="值越大，约接近输入文字 \n Defined in https://arxiv.org/abs/2207.12598 \n Guidance scale is enabled by setting `guidance_scale > 1`. Higher guidance scale encourages to generate images that are closely linked to the text `prompt`, usually at the expense of lower image quality.",
-            label_visibility="visible",
-        )
         num_inference_steps = st.slider(
             "生成轮数(num_inference_steps)",
             min_value=5,
@@ -42,6 +32,15 @@ with st.form(key="my_form"):
             step=1,
             label_visibility="visible",
             help="约大生成图片质量越高，但是速度越慢 \n The number of denoising steps. More denoising steps usually lead to a higher quality image at the expense of slower inference.",
+        )
+        guidance_scale = st.slider(
+            "指导参数(guidance_scale)",
+            min_value=0.0,
+            max_value=30.0,
+            value=7.0,
+            step=0.1,
+            help="值越大，约接近输入文字 \n Defined in https://arxiv.org/abs/2207.12598 \n Guidance scale is enabled by setting `guidance_scale > 1`. Higher guidance scale encourages to generate images that are closely linked to the text `prompt`, usually at the expense of lower image quality.",
+            label_visibility="visible",
         )
         height = st.slider(
             "高度像素(height)",
@@ -86,6 +85,14 @@ with st.form(key="my_form"):
             disabled=False,
             label_visibility="visible",
         )
+        negative_prompt = st.text_area(
+            "输入不要生成的文字描述，不填为不使用",
+            value="",
+            help="The prompt or prompts not to guide the image generation. Ignored when not using guidance (i.e., ignored if `guidance_scale` is less than `1`).",
+            disabled=False,
+            label_visibility="visible",
+        )
+        negative_prompt = None
         submit_button = st.form_submit_button("开始生成", help=None, args=None, kwargs=None)
         my_bar = st.progress(0)
         if not submit_button:
@@ -98,8 +105,8 @@ with st.form(key="my_form"):
             width,
             num_inference_steps,
             guidance_scale,
-            eta,
-            None,
+            negative_prompt,
+            eta
         )
         t = PipelineThread(func=quant_pipe, args=args)
         t.start()
@@ -110,7 +117,7 @@ with st.form(key="my_form"):
             else:
                 counter = 0
             progress = min(
-                t.func.scheduler.counter / (t.func.scheduler.num_inference_steps + 1),
+                t.func.scheduler.counter / (num_inference_steps + 1),
                 1.0,
             )
             my_bar.progress(progress)
