@@ -14,7 +14,7 @@
 
 ## 1. Introduction
 
-+ **Create beautiful apps using [Streamlit](https://github.com/streamlit/streamlit) to test [CompVis/stable-diffusion-v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4) model quantized by [OnnxRuntime](https://github.com/microsoft/onnxruntime)** cutting down memory 75%.
++ Create beautiful apps using [Streamlit](https://github.com/streamlit/streamlit) to test [CompVis/stable-diffusion-v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4) model quantized by [OnnxRuntime](https://github.com/microsoft/onnxruntime) **cutting down memory 75%**.
     + **Streamlit**:
       + an open-source app framework for Machine Learning and Data Science teams. Create beautiful web apps in minutes.
     + **CompVis/stable-diffusion-v1-4**:
