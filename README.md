@@ -62,7 +62,7 @@ services:
 
 
 ## 3. Quantization Performance
-+ The model in the docker container has been quantized by OnnxRuntime in the building of the image.
++ The model in the docker container has been quantized by OnnxRuntime in the building of the docker image.
 
   + [dockerfile](https://github.com/LowinLi/stable-diffusion-streamlit/blob/main/docker/dockerfile)
   + [building progress in Github Action](https://github.com/LowinLi/stable-diffusion-streamlit/actions/runs/3202674839/jobs/5231895605)
