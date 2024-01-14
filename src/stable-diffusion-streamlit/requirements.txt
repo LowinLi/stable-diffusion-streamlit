@@ -1,7 +1,7 @@
 ftfy==6.1.1
 onnx==1.12.0
 onnxruntime==1.12.1
-streamlit==1.13.0
+streamlit==1.30.0
 streamlit-image-comparison==0.0.2
 transformers==4.22.2
 diffusers==0.3.0
