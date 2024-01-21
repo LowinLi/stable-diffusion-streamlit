@@ -5,3 +5,4 @@ streamlit==1.13.0
 transformers==4.22.2
 diffusers==0.4.0
 torch==1.10.0+cpu
+pillow>=10.2.0 # not directly required, pinned by Snyk to avoid a vulnerability
