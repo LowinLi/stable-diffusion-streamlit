@@ -7,3 +7,4 @@ transformers==4.22.2
 diffusers==0.3.0
 torch==1.10.0
 pandas==1.4.1
+pillow>=10.2.0 # not directly required, pinned by Snyk to avoid a vulnerability
