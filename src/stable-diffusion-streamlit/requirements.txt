@@ -1,9 +1,17 @@
 ftfy==6.1.1
-onnx==1.12.0
+onnx==1.13.0
 onnxruntime==1.12.1
-streamlit==1.13.0
+streamlit==1.30.0
 streamlit-image-comparison==0.0.2
-transformers==4.22.2
+transformers==4.37.0
 diffusers==0.3.0
-torch==1.10.0
+torch==1.13.1
 pandas==1.4.1
+numpy>=1.22.2 # not directly required, pinned by Snyk to avoid a vulnerability
+opencv-python>=4.8.1.78 # not directly required, pinned by Snyk to avoid a vulnerability
+pillow>=10.2.0 # not directly required, pinned by Snyk to avoid a vulnerability
+protobuf>=3.20.2 # not directly required, pinned by Snyk to avoid a vulnerability
+pyarrow>=14.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
+sympy>=1.12 # not directly required, pinned by Snyk to avoid a vulnerability
+tornado>=6.3.3 # not directly required, pinned by Snyk to avoid a vulnerability
+validators>=0.21.0 # not directly required, pinned by Snyk to avoid a vulnerability
