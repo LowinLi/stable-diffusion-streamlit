@@ -1,4 +1,4 @@
-FROM python:3.8.7-slim as builder
+FROM python:3.13.0a3-slim as builder
 ARG HUGGINGFACE_TOKEN
 ENV HUGGINGFACE_TOKEN=${HUGGINGFACE_TOKEN}
 COPY docker/requirements.txt /app/
@@ -15,7 +15,7 @@ COPY src/stable-diffusion-streamlit /app/
 RUN cd /app/pages/model/ && \
     /app/env/bin/python prepare.py
 
-FROM python:3.8.7-slim
+FROM python:3.13.0a3-slim
 COPY --from=builder /app /app
 WORKDIR /app
 CMD ["/app/env/bin/streamlit", "run", "主页.py"]
