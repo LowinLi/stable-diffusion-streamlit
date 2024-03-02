@@ -5,5 +5,5 @@ streamlit==1.13.0
 streamlit-image-comparison==0.0.2
 transformers==4.22.2
 diffusers==0.3.0
-torch==1.10.0
+torch==1.13.0
 pandas==1.4.1
