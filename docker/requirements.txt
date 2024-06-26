@@ -4,4 +4,6 @@ onnxruntime==1.12.1
 streamlit==1.13.0
 transformers==4.22.2
 diffusers==0.4.0
-torch==1.10.0+cpu
+torch==2.2.0+cpu
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
+wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
