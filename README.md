@@ -1,16 +1,37 @@
 [**中文说明**](https://github.com/LowinLi/stable-diffusion-streamlit/blob/main/README_CN.md) | [**English**](https://github.com/LowinLi/stable-diffusion-streamlit/blob/main/README.md)
 
-# stable-diffusion-streamlit
+# 🎨 Stable Diffusion Streamlit
 
-- [1.Introduction](#1-introduction)
-- [2.Getting Started](#2-getting-started)
-- [3.Quantization Performance](#3-quantization-performance)
-- [4.Streamlit Progress Bar](#4-streamlit-progress-bar)
-- [5.To Do](#5-to-do)
-- [6.Get Help](#6-get-help)
-- [7.Acknowledgements](#7-acknowledgements)
+[![Docker Image](https://img.shields.io/badge/docker-lowinli98%2Fstable--diffusion--streamlit--onnxquantized-blue)](https://hub.docker.com/r/lowinli98/stable-diffusion-streamlit-onnxquantized)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/streamlit-1.0%2B-red.svg)](https://streamlit.io/)
 
-## 1. Introduction
+> 🚀 A beautiful web application for Stable Diffusion text-to-image generation with **75% memory reduction** through ONNX quantization
+
+## 📋 Table of Contents
+
+- [✨ Features](#-features)
+- [🚀 Introduction](#-introduction)
+- [🛠️ Getting Started](#️-getting-started)
+- [📊 Quantization Performance](#-quantization-performance)
+- [📈 Streamlit Progress Bar](#-streamlit-progress-bar)
+- [📝 To Do](#-to-do)
+- [🤝 Contributing](#-contributing)
+- [❓ Get Help](#-get-help)
+- [🙏 Acknowledgements](#-acknowledgements)
+
+## ✨ Features
+
+- 🎨 **Text-to-Image Generation**: Create stunning images from text prompts
+- 🔧 **ONNX Quantization**: 75% memory reduction with minimal quality loss
+- 🌐 **Web Interface**: Beautiful Streamlit-based user interface
+- 🖼️ **Gallery View**: Browse and manage generated images
+- 🐳 **Docker Support**: Easy deployment with Docker Compose
+- 🇨🇳 **Chinese Interface**: Native Chinese language support
+- ⚡ **Fast Inference**: Optimized for CPU execution
+
+## 🚀 Introduction
 
 + Create beautiful apps using [Streamlit](https://github.com/streamlit/streamlit) to test [CompVis/stable-diffusion-v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4) model quantized by [OnnxRuntime](https://github.com/microsoft/onnxruntime) **cutting down memory 75%**.
     + **Streamlit**:
@@ -21,7 +42,7 @@
         + a cross-platform, faster inference and lower costs accelerator for machine learning models.
 
     
-## 2. Getting Started
+## 🛠️ Getting Started
 
 ### 2.1. Deployment
 + docker-compose up -d
@@ -96,17 +117,33 @@ With another thread in Python, the progress bar can be updated by the pipeline s
 
 
 
-## 5. To Do
+## 📝 To Do
 
 - [ ] Add the Text-Guided Image-to-Image Pipeline in [Huggingface/Diffusers](https://huggingface.co/docs/diffusers/using-diffusers/img2img)
 - [ ] Add the Text-Guided Image-Inpainting Pipeline in [Huggingface/Diffusers](https://huggingface.co/docs/diffusers/using-diffusers/inpaint)
+- [ ] Add support for different Stable Diffusion models
+- [ ] Implement batch processing for multiple images
+- [ ] Add image upscaling options
+- [ ] Support for custom model fine-tuning
 
-## 6. Get Help
+## 🤝 Contributing
 
-+ Contact me at lowinli@outlook.com
-+ If appropriate, open an issue on GitHub
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-## 7. Acknowledgements
+- 🐛 **Bug Reports**: Use our [bug report template](.github/ISSUE_TEMPLATE/bug_report.md)
+- 💡 **Feature Requests**: Use our [feature request template](.github/ISSUE_TEMPLATE/feature_request.md)
+- 📖 **Documentation**: Help improve our documentation
+- 🧪 **Testing**: Help us test new features
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+
+## ❓ Get Help
+
++ 📧 Contact me at lowinli@outlook.com
++ 🐛 If appropriate, open an issue on GitHub
++ 💬 Join our discussions in the Issues section
+
+## 🙏 Acknowledgements
 
 + [Huggingface/Diffusers](https://github.com/huggingface/diffusers)
 + [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion)
